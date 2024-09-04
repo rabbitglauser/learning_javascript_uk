@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button"
+        onclick="getTime()">
+    Click me to display Date and Time.
+</button>
+
+<p id="demo"></p>
+<script>
+    function getTime() {
+        let names = ["Samuel", "Andre", "Jason"];
+        let time = Date();
+        let p = document.createElement("p");
+        for (let index = 0; index < names.length; index++) {
+            const element = names[index];
+            p.textContent = "Hi " + element + ", it's " + time;
+            document.getElementById("demo").appendChild(p);
+        }
+    }
+</script>
+</body>
+</html>
