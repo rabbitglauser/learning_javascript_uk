@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>infinite_comment_creator</title>
+</head>
+<style>
+    .comment {
+        display: block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #04AA6D;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+        margin-bottom: 10px;
+    }
+
+    .comment:hover {
+        background-color: #3e8e41
+    }
+
+    .comment:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
+<body>
+<div id="comments">
+    <div>
+        <button class="comment" onclick="addComment(this)">add comment</button>
+    </div>
+</div>
+</body>
+<script>
+    function addComment(button) {
+        const parentDiv = button.parentElement;
+        const newCommentDiv = document.createElement('div');
+        newCommentDiv.style.marginLeft = '20px';
+        newCommentDiv.innerHTML = '<button class="comment" type="button" onclick="addComment(this)">add comment</button>';
+        parentDiv.appendChild(newCommentDiv);
+        newCommentDiv.scrollIntoView({behavior: 'smooth'});
+    }
+</script>
+</html>
